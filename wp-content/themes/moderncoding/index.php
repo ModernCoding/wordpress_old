@@ -5,15 +5,16 @@
 
 <?php
 
-  $args = array(
-    'post_type'       =>  'post',
-    'posts_per_page'  =>  3
-  );
+  // $args = array(
+  //   'post_type'       =>  'post',
+  //   'posts_per_page'  =>  3
+  // );
 
-  $blogposts = new WP_Query($args);
+  // $blogposts = new WP_Query($args);
 
-  while( have_posts() ) {
-    $blogposts->the_post();
+  while( $blogposts->have_posts() ) {
+    // $blogposts->the_post();
+    the_post();
 ?>
 
   <a href="<?php the_permalink(); ?>">
