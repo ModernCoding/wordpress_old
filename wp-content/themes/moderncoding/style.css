@@ -4,3 +4,7 @@
   Description: My first theme
   Version 0.0
 */
+
+body {
+  background: red;
+}
