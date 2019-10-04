@@ -19,7 +19,7 @@
       get_stylesheet_uri(),   // path to the style.css
       NULL,   // dependencies
       microtime(),  // stylesheet version
-      all   // media supported
+      'all'   // media supported
     );
 
     wp_enqueue_script(
