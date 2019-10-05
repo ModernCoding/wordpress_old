@@ -6,7 +6,7 @@
 </div>
 
 <main>
-  <a href="blogslist.html">
+  <a href="<?php echo site_url('/blog') ?>">
     <h2 class="section-heading">All Blogs</h2>
   </a>
 
@@ -64,7 +64,7 @@
   </section>
 
 
-  <a href="blogslist.html">
+  <a href="<?php echo site_url('/projects') ?>">
     <h2 class="section-heading">All Projects</h2>
   </a>
 
