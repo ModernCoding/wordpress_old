@@ -1,60 +1,59 @@
 <?php get_header(); ?>
 
-<main>
-  <h2 class="page-heading">All Projects</h2>
+<h2 class="page-heading">All Projects</h2>
 
-  <section>
+<section>
 
-    <?php
+  <?php
 
-      while( have_posts() ) {
-        the_post();
-    
-    ?>
+    while( have_posts() ) {
+      the_post();
+  
+  ?>
 
-      <div class="card">
-        <div class="card-image">
-          <a href="<?php echo the_permalink(); ?>">
-            <img
-              src="
-                  <?php
-                    echo get_the_post_thumbnail_url(get_the_ID());
-                  ?>
-                "
+    <div class="card">
+      <div class="card-image">
+        <a href="<?php echo the_permalink(); ?>">
+          <img
+            src="
+                <?php
+                  echo get_the_post_thumbnail_url(get_the_ID());
+                ?>
+              "
 
-              alt="Card Image"
-            >
-          </a>
-        </div>
-
-        <div class="card-description">
-          <a href="<?php echo the_permalink(); ?>">
-            <h3><?php echo the_title(); ?></h3>
-          </a>
-          <div class="card-meta">
-            Posted by <?php the_author(); ?>
-            on <?php the_time('F j, Y'); ?>
-          </div>          
-          <p>
-            <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
-          </p>
-          <a
-            href="<?php echo the_permalink(); ?>"
-            class="btn-readmore"
-          >Read more</a>
-        </div>
+            alt="Card Image"
+          >
+        </a>
       </div>
 
-      <?php wp_reset_query(); ?>
+      <div class="card-description">
+        <a href="<?php echo the_permalink(); ?>">
+          <h3><?php echo the_title(); ?></h3>
+        </a>
+        <div class="card-meta">
+          Posted by <?php the_author(); ?>
+          on <?php the_time('F j, Y'); ?>
+        </div>          
+        <p>
+          <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
+        </p>
+        <a
+          href="<?php echo the_permalink(); ?>"
+          class="btn-readmore"
+        >Read more</a>
+      </div>
+    </div>
 
-    <?php
-      }
-    ?>
+    <?php wp_reset_query(); ?>
 
-  </section>
+  <?php
+    }
+  ?>
 
-  <div class="pagination">
-    <?php echo paginate_links(); ?>
-  </div>
+</section>
+
+<div class="pagination">
+  <?php echo paginate_links(); ?>
+</div>
 
 <?php get_footer(); ?>

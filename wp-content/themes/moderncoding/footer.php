@@ -50,7 +50,9 @@
               </div>
           </footer>
 
-      </main>
+      <?php if(!is_front_page()): ?>
+        </main>
+      <?php endif ?>
 
       <!-- <script src="main.js"></script> -->
       <?php wp_footer(); ?>
